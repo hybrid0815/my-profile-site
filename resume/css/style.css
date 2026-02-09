@@ -1,0 +1,54 @@
+/* 부드러운 스크롤 */
+html {
+  scroll-behavior: smooth;
+}
+
+/* 네비게이션 스크롤 시 배경 */
+#navbar.scrolled {
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* 네비게이션 활성 링크 */
+.nav-link.active {
+  color: #2563eb;
+  font-weight: 600;
+}
+
+/* 햄버거 메뉴 열림 상태 */
+#mobile-menu-btn.open .hamburger-line:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+#mobile-menu-btn.open .hamburger-line:nth-child(2) {
+  opacity: 0;
+}
+
+#mobile-menu-btn.open .hamburger-line:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* 스크롤 애니메이션 - 초기 상태 (숨김) */
+.animate-section {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* 스크롤 애니메이션 - 보이는 상태 */
+.animate-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Hero 섹션은 즉시 표시 */
+#hero .animate-section {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 네비게이션 높이만큼 스크롤 오프셋 */
+section {
+  scroll-margin-top: 64px;
+}
